@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  dind:
+    hostname: dind
+    image: docker:dind
+    privileged: true
+    ports:
+      - 0:2375
+
+  ufo:
+    image: zrpaplicacoes/ufo
+    command: bash
+    privileged: true
+    depends_on:
+      - dind
+    links:
+      - dind:docker
+
