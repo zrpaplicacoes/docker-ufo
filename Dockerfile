@@ -22,7 +22,7 @@ RUN apk --no-cache update && \
       less && \
     pip install pip --upgrade && \
     pip --no-cache-dir install awscli docker-compose && \
-    apk --no-cache add g++ make && \
+    apk --no-cache add g++ make git && \
     rm -rf /var/cache/apk/*
 
 RUN gem install bundler rubocop bundler-audit brakeman --no-rdoc --no-ri && \
